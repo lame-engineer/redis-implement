@@ -25,10 +25,7 @@ images = [
 ]
 @app.route('/')
 def index():
-    url = images[1]
-    url = redis_client.get('url')
-    if images[1] is None:
-        url = images[1]
+    url = images[0]
     redis_client.set('url', url)
     return render_template("index.html", crap=url)
 
